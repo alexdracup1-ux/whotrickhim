@@ -3,11 +3,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  output: 'export',
-  trailingSlash: true,  // Optional: Makes URLs like /oferty/ (helps with WordPress routing)
-  images: {
-    unoptimized: true,  // Required for static export; skips Next.js image optimization
-  },
+  // Remove output: 'export' and images.unoptimized for dynamic Vercel deploy
 };
 
 export default nextConfig;
