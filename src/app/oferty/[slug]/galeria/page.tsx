@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { findOfferBySlug } from "@/app/oferty/data";
+import { findOfferBySlug, offerSlugs } from "@/app/oferty/data";
+
+export async function generateStaticParams() {
+  // Auto-generates from your static data (all slugs)
+  return offerSlugs;
+}
 
 export default async function OfferGalleryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
