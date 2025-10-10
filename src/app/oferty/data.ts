@@ -71,3 +71,6 @@ export const properties: Offer[] = [
 
 export const findOfferBySlug = (slug: string) =>
   properties.find((p) => p.slug === slug);
+
+// Export slugs for use in generateStaticParams (auto-maps all 17 from properties)
+export const offerSlugs = properties.map(p => ({ slug: p.slug }));
